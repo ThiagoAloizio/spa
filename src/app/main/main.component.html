@@ -1,0 +1,19 @@
+<div>
+<h1>ATM GSW</h1>
+</div>
+    
+<div *ngIf="account">
+    <h3>Owner: {{ account.accountOwner }}, Balance: R$ {{ account.accountBalance }}</h3>
+
+    <div>
+        <label> Cash Out value </label>
+        <input type="number" class="form-control" id="cashoutField" [(ngModel)]="cashOutValue">
+    </div>
+
+    <button class="btn btn-success" (click)="cashout()">Cashout</button>
+    
+    <div *ngIf="responseNotes" class="mt-5">
+        <h4> NOTES: <span>{{ responseNotes.message }}</span> </h4>
+    </div>
+    
+</div>
